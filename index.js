@@ -2,9 +2,8 @@ const express = require("express");
 const app = express();
 const PORT = 8000;
 
-app.get("/",(req,res)=>{
-    res.send("Hello, world!");
-})
+// use express routers
+app.use("/",require("./routes"));
 
 app.listen(PORT,(err)=>{
     if(err){
