@@ -1,2 +1,17 @@
 <link rel="stylesheet" href="/css/user_profile.css">
-    <h1>Page - <%= title %></h1>
+
+<h2 style="text-align:center">User Profile</h2>
+
+<div class="card">
+  <img src="https://usuploads.s3.amazonaws.com/itlearn360/uploads/2018/12/dummy-profile-pic-300x300.jpg" alt="John">
+  <h1><%= user.name %></h1>
+  <p class="title">Email : <%= user.email %></p>
+  <p>Name : <%= user.name %></p>
+  <!-- this below icons are not working as link is not working, so it is commented-->
+  <!-- <div style="margin: 24px 0;">
+    <a href="#"><i class="fa fa-dribbble"></i></a> 
+    <a href="#"><i class="fa fa-twitter"></i></a>  
+    <a href="#"><i class="fa fa-linkedin"></i></a>  
+    <a href="#"><i class="fa fa-facebook"></i></a> 
+  </div> -->
+</div>

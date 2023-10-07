@@ -13,5 +13,8 @@ router.post("/create-session",passport.authenticate(
     "local",
     {failureRedirect:"users/sign-in"},
 ) ,users_controller.createSession);
+// here I have wrote my own middleware to logout as per the document of passport.js
+// As per sir logic it is getting error
+router.get("/sign-out",passport.setLogout,users_controller.destroySession);
 
 module.exports = router;
