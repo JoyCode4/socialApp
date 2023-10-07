@@ -75,3 +75,16 @@ module.exports.createSession = async (req, res) => {
     console.log("Error Signing In : " + err);
   }
 };
+
+// TODO : Logout
+module.exports.destorySession = (req,res)=>{
+  try{
+    if(req.cookies.user_id){
+      res.clearCookie("user_id");
+      res.redirect("/users/sign-in");
+    }
+    res.redirect("/users/sign-in");
+  }catch(err){
+    console.log("Error while Logout : " + err);
+  }
+}
