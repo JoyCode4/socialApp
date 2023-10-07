@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const password = require("passport");
 
 // render user profile page
 module.exports.profile = (req, res) => {
@@ -43,5 +44,5 @@ module.exports.create = async (req, res) => {
 
 // sign in and create a session for the user
 module.exports.createSession = (req, res) => {
-  console.log(req.body);
+  res.redirect("/");
 };
