@@ -1,2 +1,16 @@
 <link rel="stylesheet" href="/css/user_profile.css">
-    <h1>Page - <%= title %></h1>
+
+<h2 style="text-align:center"><%=user.name%></h2>
+
+<div class="card">
+  <img src="/w3images/team2.jpg" alt=<%= user.name%>>
+  <h1><%=user.name%></h1>
+  <p class="title">Email : <%=user.email%></p>
+  <p>Password : <%=user.password%></p>
+  <div style="margin: 24px 0;">
+    <a href="#"><i class="fa fa-dribbble"></i></a> 
+    <a href="#"><i class="fa fa-twitter"></i></a>  
+    <a href="#"><i class="fa fa-linkedin"></i></a>  
+    <a href="#"><i class="fa fa-facebook"></i></a> 
+  </div>
+</div>
