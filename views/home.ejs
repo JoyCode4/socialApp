@@ -2,10 +2,25 @@
 
 <div class="create-post">
     <h1>Create Post</h1>
-    <form class="cf" action="" method="POST">
+    <form class="cf" action="/posts/create" method="POST">
         <div>
-            <textarea name="message" type="text" id="input-message" placeholder="Type here"></textarea>
+            <textarea name="content" type="text" id="input-message" placeholder="Type here"></textarea>
         </div>
         <input type="submit" value="Submit" id="input-submit">
     </form>
+</div>
+
+<div class="posts">
+    <strong>Posts</strong>
+    
+    <ul class="alternating-colors">
+        <% for(let post of posts){ %>
+            <li>
+                <p>
+                    <%= post.content %>
+                </p>
+                <strong>Post By : <%= post.user.name %></strong>
+            </li>
+        <%}%>
+    </ul>
 </div>
