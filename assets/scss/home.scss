@@ -1,0 +1,105 @@
+$color_1: #a8a8a8;
+$color_2: white;
+$font-family_1: "Merriweather", sans-serif;
+
+@import "https://fonts.googleapis.com/css?family=Merriweather";
+/* Clearfix */
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	&:before {
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	&:after {
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+}
+html {
+	background: #f1f1f1;
+	font-family: $font-family_1;
+	padding: 1em;
+}
+body {
+	background: #f1f1f1;
+	font-family: $font-family_1;
+	padding: 1em;
+}
+h1 {
+	text-align: center;
+	color: $color_1;
+	text-shadow: 1px 1px 0 white;
+}
+form {
+	max-width: 600px;
+	text-align: center;
+	margin: 20px auto;
+	input {
+		border: 0;
+		outline: 0;
+		padding: 1em;
+		-moz-border-radius: 8px;
+		-webkit-border-radius: 8px;
+		border-radius: 8px;
+		display: block;
+		width: 100%;
+		margin-top: 1em;
+		font-family: $font-family_1;
+		-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+		-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+		resize: none;
+		&:focus {
+			-moz-box-shadow: 0 0px 2px #e74c3c !important;
+			-webkit-box-shadow: 0 0px 2px #e74c3c !important;
+			box-shadow: 0 0px 2px #e74c3c !important;
+		}
+	}
+	textarea {
+		border: 0;
+		outline: 0;
+		padding: 1em;
+		-moz-border-radius: 8px;
+		-webkit-border-radius: 8px;
+		border-radius: 8px;
+		display: block;
+		width: 100%;
+		margin-top: 1em;
+		font-family: $font-family_1;
+		-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+		-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+		resize: none;
+		height: 126px;
+		&:focus {
+			-moz-box-shadow: 0 0px 2px #e74c3c !important;
+			-webkit-box-shadow: 0 0px 2px #e74c3c !important;
+			box-shadow: 0 0px 2px #e74c3c !important;
+		}
+	}
+	#input-submit {
+		color: $color_2;
+		background: #e74c3c;
+		cursor: pointer;
+		&:hover {
+			-moz-box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
+			-webkit-box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
+			box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
+		}
+	}
+}
+.cf {
+	&:before {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		content: " ";
+		display: table;
+		clear: both;
+	}
+}
