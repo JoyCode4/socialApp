@@ -1,0 +1,193 @@
+$color_1: #ffffff;
+$color_2: #5383d3;
+$color_3: inherit;
+$color_4: #8f9296;
+$color_5: #d1d2d2;
+$color_6: #5c666b;
+$font-family_1: Roboto;
+$background-color_1: #33383b;
+$background-color_2: #1f2022;
+
+@import "https://fonts.googleapis.com/css?family=Roboto:400,500,300,700";
+/* Footer left */
+/* The company logo */
+/* Footer links */
+/* Footer social icons */
+/* Footer Right */
+/* The contact form */
+/* If you don't want the footer to be responsive, remove these media queries */
+* {
+	font-family: $font-family_1;
+}
+.footer-distributed {
+	background: #444;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	font: bold 16px sans-serif;
+	text-align: left;
+	padding: 50px 60px 40px;
+	overflow: hidden;
+	.footer-left {
+		float: left;
+	}
+	h3 {
+		color: $color_1;
+		font: normal 36px 'Roboto', cursive;
+		margin: 0 0 10px;
+		span {
+			color: $color_2;
+		}
+	}
+	.footer-links {
+		color: $color_1;
+		margin: 0 0 10px;
+		padding: 0;
+		a {
+			display: inline-block;
+			line-height: 1.8;
+			text-decoration: none;
+			color: $color_3;
+		}
+	}
+	.footer-company-name {
+		color: $color_4;
+		font-size: 14px;
+		font-weight: normal;
+		margin: 0;
+	}
+	.footer-icons {
+		margin-top: 40px;
+		a {
+			display: inline-block;
+			width: 35px;
+			height: 35px;
+			cursor: pointer;
+			background-color: $background-color_1;
+			border-radius: 2px;
+			font-size: 20px;
+			color: $color_1;
+			text-align: center;
+			line-height: 35px;
+			margin-right: 3px;
+			margin-bottom: 5px;
+		}
+	}
+	.footer-right {
+		float: right;
+		p {
+			display: inline-block;
+			vertical-align: top;
+			margin: 15px 42px 0 0;
+			color: $color_1;
+		}
+	}
+	form {
+		display: inline-block;
+		input {
+			display: block;
+			border-radius: 3px;
+			box-sizing: border-box;
+			background-color: $background-color_2;
+			box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+			border: none;
+			resize: none;
+			font: inherit;
+			font-size: 14px;
+			font-weight: normal;
+			color: $color_5;
+			width: 400px;
+			padding: 18px;
+			height: 55px;
+			margin-bottom: 15px;
+		}
+		textarea {
+			display: block;
+			border-radius: 3px;
+			box-sizing: border-box;
+			background-color: $background-color_2;
+			box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+			border: none;
+			resize: none;
+			font: inherit;
+			font-size: 14px;
+			font-weight: normal;
+			color: $color_5;
+			width: 400px;
+			padding: 18px;
+			height: 100px;
+			margin-bottom: 20px;
+		}
+		button {
+			border-radius: 3px;
+			background-color: $background-color_1;
+			color: $color_1;
+			border: 0;
+			padding: 15px 50px;
+			font-weight: bold;
+			float: right;
+		}
+	}
+	&::-webkit-input-placeholder {
+		color: $color_6;
+	}
+	&::-moz-placeholder {
+		color: $color_6;
+		opacity: 1;
+	}
+	&:-ms-input-placeholder {
+		color: $color_6;
+	}
+}
+section {
+	width: 100%;
+	display: inline-block;
+	background: #ccc;
+	height: 60vh;
+	text-align: center;
+	font-size: 22px;
+	font-weight: 700;
+	text-decoration: underline;
+}
+@media (max-width: 1000px) {
+	.footer-distributed {
+		font: bold 14px sans-serif;
+		.footer-company-name {
+			font-size: 12px;
+		}
+		form {
+			input {
+				width: 250px;
+			}
+			textarea {
+				width: 250px;
+			}
+			button {
+				padding: 10px 35px;
+			}
+		}
+	}
+}
+@media (max-width: 800px) {
+	.footer-distributed {
+		padding: 30px;
+		.footer-left {
+			float: none;
+			max-width: 300px;
+			margin: 0 auto;
+			margin-bottom: 40px;
+		}
+		.footer-right {
+			float: none;
+			max-width: 300px;
+			margin: 0 auto;
+		}
+		form {
+			margin-top: 30px;
+			display: block;
+			button {
+				float: none;
+			}
+		}
+	}
+}

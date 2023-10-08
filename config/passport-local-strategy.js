@@ -62,7 +62,7 @@ passport.setAuthenticatedUser = (req,res,next)=>{
 passport.setLogout=(req,res,next)=>{
   req.logout(function(err) {
     if (err) { return next(err); }
-    res.redirect('/');
+    res.redirect('/users/sign-in');
   });
 }
 

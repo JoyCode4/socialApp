@@ -1,6 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
-header{
-    height: 100px;
+@import "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap";
+/* responsive */
+header {
+  height: 100px;
 }
 
 * {
@@ -9,6 +10,7 @@ header{
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
 .nav {
   position: fixed;
   top: 0;
@@ -17,39 +19,34 @@ header{
   padding: 15px 200px;
   background: #44349e;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
 }
-.nav,
+
 .nav .nav-links {
   display: flex;
   align-items: center;
+  column-gap: 20px;
+  list-style: none;
 }
-.nav {
-  justify-content: space-between;
+
+.nav .nav-links a {
+  transition: all 0.2s linear;
 }
-a {
-  color: #fff;
-  text-decoration: none;
-}
+
 .nav .logo {
   font-size: 22px;
   font-weight: 500;
 }
-.nav .nav-links {
-  column-gap: 20px;
-  list-style: none;
-}
-.nav .nav-links a {
-  transition: all 0.2s linear;
-}
-.nav.openSearch .nav-links a {
-  opacity: 0;
-  pointer-events: none;
-}
+
 .nav .search-icon {
   color: #fff;
   font-size: 20px;
   cursor: pointer;
 }
+
 .nav .search-box {
   position: absolute;
   right: 250px;
@@ -60,10 +57,30 @@ a {
   pointer-events: none;
   transition: all 0.2s linear;
 }
+
+.nav .navOpenBtn {
+  display: none;
+}
+
+.nav .navCloseBtn {
+  display: none;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav.openSearch .nav-links a {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .nav.openSearch .search-box {
   opacity: 1;
   pointer-events: auto;
 }
+
 .search-box .search-icon {
   position: absolute;
   left: 15px;
@@ -72,6 +89,7 @@ a {
   color: #4a98f7;
   transform: translateY(-50%);
 }
+
 .search-box input {
   height: 100%;
   width: 100%;
@@ -81,11 +99,7 @@ a {
   background-color: #fff;
   padding: 0 15px 0 45px;
 }
-.nav .navOpenBtn,
-.nav .navCloseBtn {
-  display: none;
-}
-/* responsive */
+
 @media screen and (max-width: 1160px) {
   .nav {
     padding: 15px 100px;
@@ -94,6 +108,7 @@ a {
     right: 150px;
   }
 }
+
 @media screen and (max-width: 950px) {
   .nav {
     padding: 15px 50px;
@@ -103,13 +118,25 @@ a {
     max-width: 400px;
   }
 }
+
 @media screen and (max-width: 768px) {
-  .nav .navOpenBtn,
-  .nav .navCloseBtn {
-    display: block;
-  }
   .nav {
     padding: 15px 20px;
+  }
+  .nav .navOpenBtn {
+    display: block;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .nav .navCloseBtn {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
   }
   .nav .nav-links {
     position: fixed;
@@ -128,18 +155,5 @@ a {
   }
   .nav.openNav .nav-links {
     left: 0;
-  }
-  .nav .navOpenBtn {
-    color: #fff;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  .nav .navCloseBtn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    color: #fff;
-    font-size: 20px;
-    cursor: pointer;
   }
 }
