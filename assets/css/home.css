@@ -196,6 +196,15 @@ form #input-submit:hover {
   padding-left: 50px;
 }
 
+.posts .upper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.posts .upper i {
+  color: #e74c3c;
+}
+
 .posts li {
   color: #4F4F4F;
   padding-left: 16px;

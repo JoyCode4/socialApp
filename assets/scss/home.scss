@@ -187,6 +187,13 @@ form {
     ol {
         padding-left: 50px;
     }
+	.upper{
+		display: flex;
+		justify-content: space-between;
+		i{
+			color: #e74c3c;
+		}
+	}
     li {
         color: $color_11;
         padding-left: 16px;
