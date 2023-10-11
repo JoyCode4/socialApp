@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="/css/home.css">
-
+<% if(locals.user){%>
+    
 <div class="create-post">
     <h1>Create Post</h1>
     <form class="cf" action="/posts/create" method="POST">
@@ -20,7 +21,14 @@
                     <%= post.content %>
                 </p>
                 <strong>Post By : <%= post.user.name %></strong>
+                <form action="/comments/create" method="POST">
+                    <div class="add-comment">
+                        <input type="text" name="comment" placeholder="comment here">
+                        <button id="input-comment">Send Comment</button>
+                    </div>
+                </form>
             </li>
         <%}%>
     </ul>
 </div>
+<%} %>
