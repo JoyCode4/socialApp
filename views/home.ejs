@@ -30,9 +30,15 @@
 
                         <% for(let com of post.comment){%>
                             <div class="comment">
-                                <p>
-                                    <%= com.content %>
-                                </p>
+                                <div>
+                                    <p>
+                                        <%= com.content %>
+                                    </p>
+                                    <% if(locals.user.id==com.user.id){%>
+                                        <a href="/comments/destroy/<%= com._id %>"><i
+                                                class="fa-regular fa-trash-can"></i></a>
+                                        <%} %>
+                                </div>
                                 <small>
                                     -- <%= com.user.name %>
                                 </small>

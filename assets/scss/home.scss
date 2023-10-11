@@ -237,14 +237,22 @@ form {
 	margin-top: 20px;
 	margin-left:20px;
 	.comment{
-		p{
-			font-size: medium;
-			font-weight: bold;
-			color: #2d0544;
+		div{
+			p{
+				font-size: medium;
+				font-weight: bold;
+				color: #2d0544;
+				display: inline-block;
+				margin: 0 20px 0 0;
+			}
+			i{
+				margin: 0 0 0 20px;
+				color: #e74c3c;
+			}
 		}
-		small{
-			color:#4f0d75
-		}
+			small{
+				color:#4f0d75
+			}
 	}
 }
 

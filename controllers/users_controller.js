@@ -9,18 +9,17 @@ module.exports.profile = (req, res) => {
 
 // render user sign In page or Login Page
 module.exports.signUp = (req, res) => {
-  if(req.isAuthenticated()) { 
+  if (req.isAuthenticated()) {
     return res.redirect("/users/profile");
   }
   return res.render("user_sign_up", {
     title: "Social App | Sign Up",
   });
-
 };
 
 // render user Sign Up page
 module.exports.signIn = (req, res) => {
-  if(req.isAuthenticated()) { 
+  if (req.isAuthenticated()) {
     return res.redirect("/users/profile");
   }
   return res.render("user_sign_in", {
@@ -51,14 +50,13 @@ module.exports.create = async (req, res) => {
 // sign in and create a session for the user
 module.exports.createSession = (req, res) => {
   return res.redirect("/");
-
 };
 
-module.exports.destroySession = (req,res)=>{
+module.exports.destroySession = (req, res) => {
   // req.logout((err)=>{
   //   if(err){
   //     console.log("Error in logout : "+err);
   //   }
   // });
   return res.redirect("/");
-}
+};

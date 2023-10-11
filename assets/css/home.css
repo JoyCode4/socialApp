@@ -244,10 +244,17 @@ form #input-submit:hover {
   margin-left: 20px;
 }
 
-.comment-list .comment p {
+.comment-list .comment div p {
   font-size: medium;
   font-weight: bold;
   color: #2d0544;
+  display: inline-block;
+  margin: 0 20px 0 0;
+}
+
+.comment-list .comment div i {
+  margin: 0 0 0 20px;
+  color: #e74c3c;
 }
 
 .comment-list .comment small {
