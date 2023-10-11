@@ -200,6 +200,8 @@ form #input-submit:hover {
 .posts .upper {
   display: flex;
   justify-content: space-between;
+  font-weight: bold;
+  color: #292929;
 }
 
 .posts .upper i {
