@@ -226,5 +226,20 @@ form {
     }
 }
 
+.comment-list{
+	margin-top: 20px;
+	margin-left:20px;
+	.comment{
+		p{
+			font-size: medium;
+			font-weight: bold;
+			color: #2d0544;
+		}
+		small{
+			color:#4f0d75
+		}
+	}
+}
+
 
 

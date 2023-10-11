@@ -229,3 +229,18 @@ form #input-submit:hover {
 .posts ol.alternating-colors li:nth-child(even):before {
   border-color: #2378D5;
 }
+
+.comment-list {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.comment-list .comment p {
+  font-size: medium;
+  font-weight: bold;
+  color: #2d0544;
+}
+
+.comment-list .comment small {
+  color: #4f0d75;
+}
