@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import "https://fonts.googleapis.com/css?family=Merriweather";
 @import "https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap";
 /* Clearfix */
@@ -206,7 +207,7 @@ form #input-submit:hover {
 }
 
 .posts li {
-  color: #4F4F4F;
+  color: #4f4f4f;
   padding-left: 16px;
   margin-top: 24px;
   position: relative;
@@ -216,15 +217,11 @@ form #input-submit:hover {
 }
 
 .posts li:before {
-  content: "";
+  content: "☄";
   display: block;
-  height: 22px;
-  width: 22px;
-  border-radius: 50%;
-  border: 2px solid #725151;
   position: absolute;
   top: -1px;
-  left: -20px;
+  left: -15px;
 }
 
 .posts strong {
@@ -232,16 +229,21 @@ form #input-submit:hover {
 }
 
 .posts ol.alternating-colors li:nth-child(odd):before {
-  border-color: #0BAD02;
+  border-color: #0bad02;
 }
 
 .posts ol.alternating-colors li:nth-child(even):before {
-  border-color: #2378D5;
+  border-color: #2378d5;
 }
 
 .comment-list {
   margin-top: 20px;
   margin-left: 20px;
+}
+
+.comment-list .comment-header {
+  color: #605f61;
+  margin: -10px 0 10px -15px;
 }
 
 .comment-list .comment div p {
