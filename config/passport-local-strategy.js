@@ -9,18 +9,21 @@ passport.use(
   new LocalStrategy(
     {
       usernameField: "email",
+      passReqToCallback: true,
     },
-    async (email, password, done) => {
+    async (req, email, password, done) => {
       try {
         // Find a user and establish the identity
         const user = await User.findOne({ email: email });
         if (!user || user.password != password) {
           console.log("Invalid Username/Password");
+          req.flash("error", "Invalid Username/Password");
           return done(null, false);
         }
         return done(null, user);
       } catch (err) {
         console.log("Error in finding User --> Passport");
+        req.flash("error", "Error in finding User --> Passport");
         return done(err);
       }
     }
@@ -44,26 +47,28 @@ passport.deserializeUser(async (id, done) => {
 });
 
 // check if the user is authenticated
-passport.checkAuthentication = (req,res,next)=>{
-    // if the user is signed in, then pass on the request to the next function(controller's action)
-    if(req.isAuthenticated()){
-        return next();
-    }
-    return res.redirect("/users/sign-in");
-}
+passport.checkAuthentication = (req, res, next) => {
+  // if the user is signed in, then pass on the request to the next function(controller's action)
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  return res.redirect("/users/sign-in");
+};
 
-passport.setAuthenticatedUser = (req,res,next)=>{
-    if(req.isAuthenticated()){
-        res.locals.user = req.user;
+passport.setAuthenticatedUser = (req, res, next) => {
+  if (req.isAuthenticated()) {
+    res.locals.user = req.user;
+  }
+  return next();
+};
+
+passport.setLogout = (req, res, next) => {
+  req.logout(function (err) {
+    if (err) {
+      return next(err);
     }
     return next();
-}
-
-passport.setLogout=(req,res,next)=>{
-  req.logout(function(err) {
-    if (err) { return next(err); }
-    res.redirect('/users/sign-in');
   });
-}
+};
 
 module.exports = passport;

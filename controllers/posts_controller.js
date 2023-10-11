@@ -13,6 +13,7 @@ module.exports.create = async (req, res) => {
         user: req.user._id,
       });
       // console.log(post);
+      req.flash("success", "Post Added Successfully!");
       return res.redirect("back");
     }
   } catch (err) {
@@ -30,6 +31,7 @@ module.exports.destroy = async (req, res) => {
 
         await Comment.deleteMany({ post: req.params.id });
 
+        req.flash("success", "Post Deleted Successfully!");
         return res.redirect("back");
       }
       return res.redirect("back");
