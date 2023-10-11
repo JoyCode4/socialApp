@@ -1,23 +1,41 @@
 <link rel="stylesheet" href="/css/home.css">
-<% if(locals.user){%>
+<div class="home">
 
-    <div class="create-post">
-        <h1>Create Post</h1>
-        <form class="cf" action="/posts/create" method="POST">
-            <div>
-                <textarea name="content" type="text" id="input-message" placeholder="Type here"></textarea>
+    <% if(locals.user){%>
+        <div>
+            <div class="create-post">
+                <h1>Create Post</h1>
+                <form class="cf" action="/posts/create" method="POST">
+                    <div>
+                        <textarea name="content" type="text" id="input-message" placeholder="Type here"></textarea>
+                    </div>
+                    <input type="submit" value="Submit" id="input-submit">
+                </form>
             </div>
-            <input type="submit" value="Submit" id="input-submit">
-        </form>
-    </div>
 
-    <div class="posts">
-        <strong>Posts</strong>
+            <div class="posts">
+                <strong>Posts</strong>
 
-        <ul class="alternating-colors">
-            <% for(let post of posts){ %>
-                <%- include("_post",{post:post})%>
-                    <%}%>
-        </ul>
-    </div>
-    <%} %>
+                <ul class="alternating-colors">
+                    <% for(let post of posts){ %>
+                        <%- include("_post",{post:post})%>
+                            <%}%>
+                </ul>
+            </div>
+        </div>
+
+        <div class="friends-list posts">
+            <h1>Friends</h1>
+            <ul>
+                <% for(let u of all_users){%>
+                    <li>
+                        <a style="color: rgb(17, 4, 65);" href="/users/profile/<%=u.id%>">
+                            <%= u.name %>
+                        </a>
+                    </li>
+                    <%} %>
+            </ul>
+        </div>
+
+        <%} %>
+</div>

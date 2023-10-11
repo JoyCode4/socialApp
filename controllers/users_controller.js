@@ -1,10 +1,23 @@
 const User = require("../models/user");
 
 // render user profile page
-module.exports.profile = (req, res) => {
+module.exports.profile = async (req, res) => {
+  const user_profile = await User.findById(req.params.id);
   return res.render("user_profile", {
     title: "User Profile",
+    user_profile,
   });
+};
+
+module.exports.update = async (req, res) => {
+  try {
+    if (req.user.id == req.params.id) {
+      await User.findByIdAndUpdate(req.params.id, req.body);
+      return res.redirect("back");
+    }
+  } catch (err) {
+    console.log("Error while Updating User Details: " + err);
+  }
 };
 
 // render user sign In page or Login Page

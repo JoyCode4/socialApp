@@ -8,13 +8,15 @@
         <% if(locals.user){%>
             <ul class="nav-links">
                 <li><a href="/users/sign-out">Sign Out</a></li>
-                <li><a href="/users/profile"><%= user.name %></a></li>
+                <li><a href="/users/profile/<%= user.id %>">
+                        <%= user.name %>
+                    </a></li>
             </ul>
-        <% }else{ %>
-        <ul class="nav-links">
-            <li><a href="/users/sign-in">Sign In</a></li>
-            <li><a href="/users/sign-up">Sign Up</a></li>
-        </ul>
-        <% } %>
+            <% }else{ %>
+                <ul class="nav-links">
+                    <li><a href="/users/sign-in">Sign In</a></li>
+                    <li><a href="/users/sign-up">Sign Up</a></li>
+                </ul>
+                <% } %>
     </nav>
 </header>

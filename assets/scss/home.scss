@@ -1,4 +1,4 @@
-$color_1: #a8a8a8;
+$color_1: #6b6464;
 $color_2: white;
 $font-family_1: "Merriweather", sans-serif;
 $color_11: #4f4f4f;
@@ -32,7 +32,14 @@ body {
 h1 {
   text-align: center;
   color: $color_1;
-  text-shadow: 1px 1px 0 white;
+  text-shadow: 1px 1px 0 rgb(245, 231, 231);
+}
+.home {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 10px auto;
+  max-width: 100vh;
 }
 form {
   max-width: 600px;
@@ -167,7 +174,7 @@ form {
   font-family: $font-family_1;
   display: flex;
   flex-direction: column;
-  max-width: 520px;
+  min-width: 200px;
   margin: 60px auto;
   border: 1px solid #eee;
   // box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.06);

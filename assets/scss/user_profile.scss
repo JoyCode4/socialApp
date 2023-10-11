@@ -3,38 +3,41 @@ $color_2: white;
 $color_3: black;
 $font-family_1: arial;
 $background-color_1: #000;
-
+body {
+  background: #f1f1f1;
+  font-family: $font-family_1;
+}
 .card {
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-	max-width: 300px;
-	margin: auto;
-	text-align: center;
-	font-family: $font-family_1;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: $font-family_1;
 }
 .title {
-	color: $color_1;
-	font-size: 18px;
+  color: $color_1;
+  font-size: 18px;
 }
 button {
-	border: none;
-	outline: 0;
-	display: inline-block;
-	padding: 8px;
-	color: $color_2;
-	background-color: $background-color_1;
-	text-align: center;
-	cursor: pointer;
-	width: 100%;
-	font-size: 18px;
-	&:hover {
-		opacity: 0.7;
-	}
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: $color_2;
+  background-color: $background-color_1;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  &:hover {
+    opacity: 0.7;
+  }
 }
 a {
-	text-decoration: none;
-	font-size: 22px;
-	color: $color_3;
-	&:hover {
-		opacity: 0.7;
-	}
+  text-decoration: none;
+  font-size: 22px;
+  color: $color_3;
+  &:hover {
+    opacity: 0.7;
+  }
 }

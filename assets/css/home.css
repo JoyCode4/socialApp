@@ -27,8 +27,16 @@ body {
 
 h1 {
   text-align: center;
-  color: #a8a8a8;
-  text-shadow: 1px 1px 0 white;
+  color: #6b6464;
+  text-shadow: 1px 1px 0 #f5e7e7;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 10px auto;
+  max-width: 100vh;
 }
 
 form {
@@ -174,7 +182,7 @@ form #input-submit:hover {
   font-family: "Merriweather", sans-serif;
   display: flex;
   flex-direction: column;
-  max-width: 520px;
+  min-width: 200px;
   margin: 60px auto;
   border: 1px solid #eee;
 }
