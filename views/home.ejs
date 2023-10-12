@@ -5,7 +5,7 @@
         <div>
             <div class="create-post">
                 <h1>Create Post</h1>
-                <form class="cf" action="/posts/create" method="POST">
+                <form id="new-post-form" class="cf" action="/posts/create" method="POST">
                     <div>
                         <textarea name="content" type="text" id="input-message" placeholder="Type here"></textarea>
                     </div>
@@ -16,7 +16,7 @@
             <div class="posts">
                 <strong>Posts</strong>
 
-                <ul class="alternating-colors">
+                <ul id="posts-list" class="alternating-colors">
                     <% for(let post of posts){ %>
                         <%- include("_post",{post:post})%>
                             <%}%>
@@ -39,3 +39,5 @@
 
         <%} %>
 </div>
+
+<script src="/js/home_posts.js"></script>
