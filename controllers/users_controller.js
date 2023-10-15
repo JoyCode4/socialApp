@@ -1,4 +1,6 @@
 const User = require("../models/user");
+const fs = require("fs");
+const path = require("path");
 
 // render user profile page
 module.exports.profile = async (req, res) => {
@@ -12,7 +14,27 @@ module.exports.profile = async (req, res) => {
 module.exports.update = async (req, res) => {
   try {
     if (req.user.id == req.params.id) {
-      await User.findByIdAndUpdate(req.params.id, req.body);
+      const user = await User.findById(req.params.id);
+      console.log(user);
+      await User.uploadAvatar(req, res, function (err) {
+        if (err) {
+          console.log("Multer Error: " + err);
+        }
+
+        user.name = req.body.name;
+        user.email = req.body.email;
+
+        if (req.file) {
+          if (user.avatar) {
+            fs.unlinkSync(path.join(__dirname, "..", user.avatar));
+          }
+
+          // this saves the path of the file path into userSchema
+          user.avatar = User.avatarPath + "/" + req.file.filename;
+        }
+
+        user.save();
+      });
       req.flash("success", "User data is Updated Successfully!");
       return res.redirect("back");
     }

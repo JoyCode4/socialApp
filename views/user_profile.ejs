@@ -4,16 +4,20 @@
 
 
 <div class="card">
-  <img src="https://usuploads.s3.amazonaws.com/itlearn360/uploads/2018/12/dummy-profile-pic-300x300.jpg" alt="John">
-  <h1>
-    <%= user_profile.name %>
-  </h1>
-  <p class="title">Email : <%= user_profile.email %>
-  </p>
-  <p>Name : <%= user_profile.name %>
-  </p>
-  <!-- this below icons are not working as link is not working, so it is commented-->
-  <!-- <div style="margin: 24px 0;">
+  <%if(!user_profile.avatar){%>
+    <img src="https://usuploads.s3.amazonaws.com/itlearn360/uploads/2018/12/dummy-profile-pic-300x300.jpg" alt="John">
+    <%}else{%>
+      <img src="<%= user_profile.avatar %>" width="300px" height="350px" alt="John">
+      <%}%>
+        <h1>
+          <%= user_profile.name %>
+        </h1>
+        <p class="title">Email : <%= user_profile.email %>
+        </p>
+        <p>Name : <%= user_profile.name %>
+        </p>
+        <!-- this below icons are not working as link is not working, so it is commented-->
+        <!-- <div style="margin: 24px 0;">
     <a href="#"><i class="fa fa-dribbble"></i></a> 
     <a href="#"><i class="fa fa-twitter"></i></a>  
     <a href="#"><i class="fa fa-linkedin"></i></a>  
@@ -25,7 +29,7 @@
   <div class="container">
     <div class="screen">
       <div class="screen__content">
-        <form method="POST" action="/users/update/<%= user_profile.id %>" class="login">
+        <form method="POST" action="/users/update/<%= user_profile.id %>" class="login" enctype="multipart/form-data">
           <h1 class="login_header" style="color: rgb(3, 30, 121);">Update Profile</h1>
           <div class="login__field">
             <i class="login__icon fas fa-user"></i>
@@ -34,6 +38,10 @@
           <div class="login__field">
             <i class="login__icon fas fa-user"></i>
             <input type="email" class="login__input" placeholder="User Email" name="email" required>
+          </div>
+          <div class="login__field">
+            <i class="login__icon fas fa-user"></i>
+            <input type="file" class="login__input" placeholder="User Email" name="avatar">
           </div>
           <button class="button login__submit">
             <span class="button__text">Update Profile</span>
