@@ -14,6 +14,7 @@ const MongoStore = require("connect-mongo");
 const sassMiddleware = require("node-sass-middleware");
 const flash = require("connect-flash");
 const CMiddleware = require("./config/middleware");
+const kue = require("kue");
 
 app.use(
   sassMiddleware({
@@ -67,6 +68,9 @@ app.use(CMiddleware.setFlash);
 
 // use express routers
 app.use("/", require("./routes"));
+
+//used this to see the kue job working
+// kue.app.listen(3001);
 
 app.listen(PORT, (err) => {
   if (err) {
