@@ -16,8 +16,26 @@
         </p>
         <p>Name : <%= user_profile.name %>
         </p>
-        <!-- this below icons are not working as link is not working, so it is commented-->
-        <!-- <div style="margin: 24px 0;">
+        <% if(! (user_profile.id==locals.user._id)){%>
+          <% let func=(arr1,arr2)=>{return arr1.some(item => arr2.includes(item._id))} %>
+            <% if(func(user_profile.friendship,locals.user.friendship)){%>
+              <a href="/friendships/remove/<%=user_profile.id%>">
+                <button class="button login__submit">
+                  <span class="button__text text-center">Remove Friend</span>
+                  <!-- <i class="button__icon fas fa-chevron-right"></i> -->
+                </button>
+              </a>
+              <%}else{%>
+                <a href="/friendships/add/<%=user_profile.id%>">
+                  <button class="button login__submit">
+                    <span class="button__text text-center">Add Friend</span>
+                    <!-- <i class="button__icon fas fa-chevron-right"></i> -->
+                  </button>
+                </a>
+                <%} %>
+                  <%}%>
+                    <!-- this below icons are not working as link is not working, so it is commented-->
+                    <!-- <div style="margin: 24px 0;">
     <a href="#"><i class="fa fa-dribbble"></i></a> 
     <a href="#"><i class="fa fa-twitter"></i></a>  
     <a href="#"><i class="fa fa-linkedin"></i></a>  

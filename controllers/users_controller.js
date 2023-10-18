@@ -4,7 +4,11 @@ const path = require("path");
 
 // render user profile page
 module.exports.profile = async (req, res) => {
-  const user_profile = await User.findById(req.params.id);
+  const user_profile = await User.findById(req.params.id).populate({
+    path: "friendship",
+    populate: { path: "from_user" },
+    populate: { path: "to_user" },
+  });
   return res.render("user_profile", {
     title: "User Profile",
     user_profile,

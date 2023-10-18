@@ -1,5 +1,6 @@
 const Post = require("../models/post");
 const User = require("../models/user");
+const Friendship = require("../models/friendship");
 
 module.exports.home = async (req, res) => {
   try {
@@ -20,10 +21,23 @@ module.exports.home = async (req, res) => {
 
     const user = await User.find({});
 
+    const currentUser = await User.findById(req.user._id).populate({
+      path: "friendship",
+      populate: { path: "from_user" },
+      populate: { path: "to_user" },
+    });
+
+    for (let i of currentUser.friendship) {
+      if (!(i.from_user == currentUser || i.to_user == currentUser)) {
+        console.log(i);
+      }
+    }
+
     return res.render("home", {
       title: "Social Media App",
       posts: posts,
       all_users: user,
+      cUser: currentUser,
     });
   } catch (err) {
     console.log("Error in Fetching Post and all users: ", err);

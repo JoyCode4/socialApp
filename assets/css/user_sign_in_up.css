@@ -185,6 +185,10 @@ body {
   outline: none;
 }
 
+.login__submit .text-center {
+  margin: auto;
+}
+
 .google {
   margin: auto;
   max-width: 300px;

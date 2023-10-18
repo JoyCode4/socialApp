@@ -24,17 +24,31 @@
             </div>
         </div>
 
-        <div class="friends-list posts">
-            <h1>Friends</h1>
-            <ul>
-                <% for(let u of all_users){%>
-                    <li>
-                        <a style="color: rgb(17, 4, 65);" href="/users/profile/<%=u.id%>">
-                            <%= u.name %>
-                        </a>
-                    </li>
-                    <%} %>
-            </ul>
+        <div class="user-details-container">
+            <div class="friends-list posts">
+                <h1>Friends</h1>
+                <ul>
+                    <% for(let f of cUser.friendship){%>
+                        <li>
+                            <a style="color: rgb(17, 4, 65);" href="/users/profile/<%=f.to_user.id%>">
+                                <%= f.to_user.name %>
+                            </a>
+                        </li>
+                        <%} %>
+                </ul>
+            </div>
+            <div class="friends-list posts">
+                <h1>Users</h1>
+                <ul>
+                    <% for(let u of all_users){%>
+                        <li>
+                            <a style="color: rgb(17, 4, 65);" href="/users/profile/<%=u.id%>">
+                                <%= u.name %>
+                            </a>
+                        </li>
+                        <%} %>
+                </ul>
+            </div>
         </div>
 
         <%} %>
