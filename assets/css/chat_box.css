@@ -23,6 +23,7 @@
 }
 
 .card {
+  min-width: 200px;
   border: 0;
   border-radius: 0px;
   margin-bottom: 30px;
@@ -107,8 +108,6 @@ h4.card-title {
 .media-chat {
   padding-right: 64px;
   margin-bottom: 0;
-  padding-right: 64px;
-  margin-bottom: 0;
 }
 
 .media-chat .media-body {
@@ -125,11 +124,6 @@ h4.card-title {
   border-radius: 3px;
   font-weight: 100;
   color: #9b9b9b;
-  position: relative;
-  padding: 6px 8px;
-  margin: 4px 0;
-  background-color: #f5f6f7;
-  border-radius: 3px;
 }
 
 .media-chat .media-body p.meta {
@@ -139,12 +133,6 @@ h4.card-title {
 }
 
 .media {
-  padding: 16px 12px;
-  -webkit-transition: background-color 0.2s linear;
-  transition: background-color 0.2s linear;
-  padding: 16px 12px;
-  -webkit-transition: background-color 0.2s linear;
-  transition: background-color 0.2s linear;
   padding: 16px 12px;
   -webkit-transition: background-color 0.2s linear;
   transition: background-color 0.2s linear;
@@ -208,7 +196,7 @@ h4.card-title {
 
 .media-chat.media-chat-reverse {
   padding-right: 12px;
-  padding-left: 64px;
+  padding-left: 114px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
   flex-direction: row-reverse;

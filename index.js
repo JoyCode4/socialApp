@@ -16,6 +16,11 @@ const flash = require("connect-flash");
 const CMiddleware = require("./config/middleware");
 const kue = require("kue");
 
+// setting up the socket
+const chatServer = require("http").createServer(app);
+const chatSockets = require("./config/chat_sockets").chatSockets(chatServer);
+chatServer.listen(5000);
+
 app.use(
   sassMiddleware({
     src: "./assets/scss",

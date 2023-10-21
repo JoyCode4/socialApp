@@ -12,9 +12,7 @@ module.exports.home = async (req, res) => {
       .populate({
         path: "comment",
         populate: { path: "user" },
-        populate: { path: "likes" },
       })
-      .populate("comment")
       .populate("likes")
       .exec();
 
