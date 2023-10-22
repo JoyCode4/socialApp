@@ -1,7 +1,8 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const app = express();
-const PORT = process.env.PORT || 8000;
+const PORT = 8000 || process.env.PORT;
+const hostname = "0.0.0.0";
 
 require("dotenv").config();
 const expressLayouts = require("express-ejs-layouts");
@@ -78,7 +79,7 @@ app.use("/", require("./routes"));
 //used this to see the kue job working
 // kue.app.listen(3001);
 
-app.listen(PORT, (err) => {
+app.listen(PORT, hostname, (err) => {
   if (err) {
     console.log("Error", err);
   }
