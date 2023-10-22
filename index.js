@@ -7,6 +7,7 @@ const hostname = "0.0.0.0";
 require("dotenv").config();
 const expressLayouts = require("express-ejs-layouts");
 const db = require("./config/mongoose");
+db();
 // session cookies encryption and the passport auth
 const session = require("express-session");
 const passport = require("passport");
