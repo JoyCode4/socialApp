@@ -6,7 +6,7 @@ const db = main();
 async function main() {
   try {
     // put only 127.0.0.1:27017 don't put localhost
-    await mongoose.connect(process.env.MongoUrl);
+    await mongoose.connect(process.env.MongoUrl.toString());
     console.log("MongoDB is Connected Successfully");
   } catch (err) {
     console.log("Error in Connecting MongoDB: " + err.message);
