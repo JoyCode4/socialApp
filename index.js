@@ -60,7 +60,7 @@ app.use(
       maxAge: 1000 * 60 * 60, //1 hour max age of cookie expire
     },
     store: MongoStore.create({
-      mongoUrl: "mongodb://127.0.0.1:27017/socialApp",
+      mongoUrl: process.env.MongoUrl.toString(),
       autoRemove: "disabled",
     }),
   })
