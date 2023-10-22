@@ -6,13 +6,12 @@ const db = main();
 async function main() {
   try {
     // put only 127.0.0.1:27017 don't put localhost
-    await mongoose.connect("mongodb://127.0.0.1:27017/socialApp");
+    await mongoose.connect(process.env.MongoUrl);
     console.log("MongoDB is Connected Successfully");
   } catch (err) {
     console.log("Error in Connecting MongoDB: " + err.message);
   }
 }
-
 
 // **Sir's Logic to connect mongodb
 // mongoose.connect("mongodb://127.0.0.1:27017/socialApp")
@@ -24,7 +23,5 @@ async function main() {
 // db.once("open", function() {
 //   console.log("Connected to Database :: MongoDB");
 // });
-
-
 
 module.exports = db;

@@ -1,7 +1,9 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
+
+require("dotenv").config();
 const expressLayouts = require("express-ejs-layouts");
 const db = require("./config/mongoose");
 // session cookies encryption and the passport auth
@@ -20,7 +22,6 @@ const kue = require("kue");
 const chatServer = require("http").createServer(app);
 const chatSockets = require("./config/chat_sockets").chatSockets(chatServer);
 chatServer.listen(5000);
-
 app.use(
   sassMiddleware({
     src: "./assets/scss",
@@ -50,7 +51,7 @@ app.set("views", "./views");
 app.use(
   session({
     name: "socialapp",
-    secret: "social",
+    secret: process.env.sessionSecret,
     saveUninitialized: false,
     resave: false,
     cookie: {

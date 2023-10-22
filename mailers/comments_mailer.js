@@ -17,7 +17,7 @@ module.exports.newComment = (comment) => {
         console.log("Error in sending mail: " + err);
         return;
       }
-      console.log("message send: " + info);
+      // console.log("message send: " + info);
       return;
     }
   );

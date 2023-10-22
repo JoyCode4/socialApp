@@ -21,8 +21,8 @@ async function sendMail() {
     port: 587,
     secure: "false",
     auth: {
-      user: "codingninjas2k16@gmail.com",
-      pass: "slwvvlczduktvhdj",
+      user: mailUser,
+      pass: mailPass,
       // pass:"fuidznkchlxrwpup"
     },
   });
