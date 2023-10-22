@@ -1,13 +1,10 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const app = express();
-const PORT = 8000 || process.env.PORT;
-const hostname = "0.0.0.0";
-
+const PORT = process.env.PORT || 8000;
 require("dotenv").config();
 const expressLayouts = require("express-ejs-layouts");
 const db = require("./config/mongoose");
-db();
 // session cookies encryption and the passport auth
 const session = require("express-session");
 const passport = require("passport");
@@ -80,7 +77,7 @@ app.use("/", require("./routes"));
 //used this to see the kue job working
 // kue.app.listen(3001);
 
-app.listen(PORT, hostname, (err) => {
+app.listen(PORT, (err) => {
   if (err) {
     console.log("Error", err);
   }
