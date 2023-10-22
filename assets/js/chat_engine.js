@@ -3,7 +3,7 @@ class ChatEngine {
     this.chatBoxId = $(`#${chatBoxId}`);
     this.userEmail = userEmail;
 
-    this.socket = io.connect("https://socialapp-frri.onrender.com", {
+    this.socket = io.connect("https://socialapp-frri.onrender.com:5000", {
       transports: ["websocket"],
     });
 
